@@ -1,0 +1,48 @@
+package Tarefa;
+
+import javax.swing.JOptionPane;
+import java.lang.Double;
+public class Appcalculadora{
+	public static void main(String args[]){
+		Calculadora calc1 = new Calculadora();
+		int i = 0;
+		
+		JOptionPane.showMessageDialog(null, "Bem-Vindo à nossa aplicação!","CALCULADORA", JOptionPane.INFORMATION_MESSAGE);
+		do{
+		calc1.operando1=Double.valueOf(JOptionPane.showInputDialog("Digite o operando 1")); 
+		calc1.operando2=Double.valueOf(JOptionPane.showInputDialog("Digite o operando 2")); 
+		calc1.operação=Double.valueOf(JOptionPane.showInputDialog("Digite\n 1: Soma \n 2: Subtração \n  3: Divisão \n 4: Multiplicação \n 0: Cancelar"));
+		
+		if(calc1.operação == 1) {
+		calc1.somar();
+		JOptionPane.showMessageDialog(null, Double.toString(calc1.resultado),"CALCULADORA", JOptionPane.INFORMATION_MESSAGE);
+		}else if(calc1.operação == 2) {
+			calc1.subtrair();
+			JOptionPane.showMessageDialog(null, Double.toString(calc1.resultado),"CALCULADORA", JOptionPane.INFORMATION_MESSAGE);
+		}else if(calc1.operação == 3) {
+			calc1.dividir();
+			JOptionPane.showMessageDialog(null, Double.toString(calc1.resultado),"CALCULADORA", JOptionPane.INFORMATION_MESSAGE);
+		}else if(calc1.operação == 4) {
+			calc1.multiplicar();
+			JOptionPane.showMessageDialog(null, Double.toString(calc1.resultado),"CALCULADORA", JOptionPane.INFORMATION_MESSAGE);
+			
+		}else if(calc1.operação == 0) {
+			JOptionPane.showMessageDialog(null, "Cancelado","CALCULADORA", JOptionPane.INFORMATION_MESSAGE);
+			i = 1;
+		}else {
+			JOptionPane.showMessageDialog(null, "Valor Invalido","CALCULADORA", JOptionPane.INFORMATION_MESSAGE);
+		}
+		
+		}while(i != 1);
+		/**JOptionPane.showMessageDialog(null, "CALCULADORA",Double.toString(calc1.resultado), JOptionPane.INFORMATION_MESSAGE);
+
+		/**calc1.operando1=20
+		calc1.operando2=10
+		calc1.subtrair();
+		
+		calc1.operando1=20
+		calc1.operando2=50
+		calc1.multiplicar()**/;
+	}
+
+}
