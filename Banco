@@ -1,0 +1,15 @@
+package Tarefa;
+
+public class Banco {
+
+	public static void main (String[] args) {
+		Usuario user1 = new Usuario();
+		user1.setnome("Carabina");
+		user1.setlogin("Alan123");
+		user1.setsenha("12345678910111213141516171819");
+		
+		System.out.println(user1.getnome());
+		System.out.println(user1.getlogin());
+		System.out.println(user1.getsenha());
+	}
+}
